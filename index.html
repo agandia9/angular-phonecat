@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" ng-app="phonecatApp">
 <head>
 	<meta charset="UTF-8">
 	<title>phonecat-Angular</title>
 	<link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="http://bootswatch.com/simplex/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand
 :400,500,700" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/phone-list.component.js"></script>
+
 </head>
-<body>
+<body >
 	<h1>My Phonecat App</h1>
+	<p>Username: <input ng-model="userName" placeholder="user"></p>
 		<div class="jumbotron">
-			<h1 class="display-3">Hello, world!</h1>
-			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+			<h1 class="display-3">Hello {{userName}}!</h1>
 			<hr class="m-y-md">
 			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
 			<p class="lead">
 				<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 			</p>
 		</div>
+		<!-- Use a custom component to render a list of phones -->
+	<phone-list></phone-list>
 </body>
 
 </html>
