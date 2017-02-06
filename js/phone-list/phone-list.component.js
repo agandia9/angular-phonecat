@@ -1,14 +1,10 @@
-angular.module('phonecatApp')
+angular.module('phoneList')
 	.component('phoneList', {
-		template: 
-			'<div>' +
-				'<p> {{$ctrl.title}} </p>' + //$ctrl. => access vars in this associated controller
-				'<ul>' +
-				'<li ng-repeat="phone in $ctrl.phones" ng-show="phone.id >= 1">{{phone.name}} :<small> {{phone.snippet}}</small></li>' +
-				'</ul>' +
-			'</div>',
+		 // Note: The URL is relative to our `index.html` file!
+		templateUrl: 'js/phone-list/phone-list.template.html',
 		controller: function PhoneListController() {
 			this.title = "Hi there..."
+			this.secondTitle = "PhoneList"
 			this.phones = [{
 				id: 0,
 				name: 'iPhone 4',
@@ -21,6 +17,10 @@ angular.module('phonecatApp')
 				id: 2,
 				name: 'iPhone 5',
 				snippet: 'The experiment...'
+			}, {
+				id: 3,
+				name: 'iPhone 5S',
+				snippet: 'The experiment overprized'
 			}]
 		}
 	})
